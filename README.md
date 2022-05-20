@@ -6,7 +6,7 @@
 
 ## Tools
 
-* [Kompass (КОМПАС-3D v20)] (https://kompas.ru/)
+* [Kompass (КОМПАС-3D v20)](https://kompas.ru/)
 * Program
 
 *All calculations and all text are written in Russian, by [me](https://github.com/David2261 "Bulat Nasyrov")*
