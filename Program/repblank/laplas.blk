@@ -1,0 +1,77 @@
+<HTML><HEAD><TITLE>Пакет ТАУ ver.2 - Отчет </TITLE></HEAD><!-- Автор проекта: Кирюшин О.В.,   2005 г. --><BODY>
+<center>
+<table width=550 border=0><tr><td>
+<div style="font-family:arial">
+<center>
+<font size=+1><b>
+{h}
+</b></font><br><img src="
+{p}
+b_line.gif"><br><br>
+<b><u>Исходные данные для расчета</u></b></center>
+<b><i>Параметры передаточной функции</i></b><br>
+<table width=400 border=0 cellpadding=0>
+<TR><TD valign=top> Коэффициент усиления</td><td> K = 
+{k}
+</td></tr>
+<tr><td valign=top> Запаздывание </td><td> tau = 
+{t}
+</td></tr>
+<tr><td valign=top> Коэффициенты числителя </td><td> 
+{b}
+</td></tr>
+<tr><td valign=top> Коэффициенты знаменателя </td><td> 
+{a}
+</td></tr>
+</table>
+Вид передаточной функции
+<center><br><img src="
+{f}
+"><br></center>
+<br>
+<b><i>Параметры расчета</i></b><br>
+<table width=400 border=0 cellpadding=0>
+<tr><td valign=top> Величина входного сигнала </td><td> x = 
+{vh}
+</td></tr>
+<tr><td valign=top> Начальные условия </td><td>  
+{u}
+</td></tr>
+<TR><TD valign=top> Количество точек кривой</td><td> N = 
+{nt}
+</td></tr>
+<tr><td valign=top> Начальный момент времени </td><td> t0 = 
+{t0}
+</td></tr>
+<tr><td valign=top> Шаг по оси времени </td><td> dt = 
+{dt}
+ </td></tr>
+</table>
+<br>
+<center><b><u>Результаты расчета</u></b></center>
+<b><i>Корни характеристического полинома</i></b><br>
+{kr}
+<br><b><i>Коэффициенты числителей</i></b><br>
+{km}
+<br><b><i>Вид функции</i></b><br>
+{yt}
+<br><br><b><i>Переходный процесс</i></b><br>
+<center><br><img src="
+{g}
+"><br>
+Переходная кривая</center>
+<br>
+<center>
+<table border=1 cellpadding=2 cellspacing=0>
+<TR align=center><TD valign=top><b> t</b></td><td><b> y(t) </b></td></tr>
+{tb}
+</table>
+<br><img src="
+{p}
+b_line.gif"><br><br>
+</center>
+</div></td></tr></table></center>
+
+
+
+</BODY></HTML> 
