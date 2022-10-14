@@ -1,0 +1,223 @@
+/* Программа для курсового проекта (моя) */
+
+// Цепь 1
+IF "Start" THEN
+	"RawFlow" := TRUE;
+ELSE
+	"RawFlow" := FALSE;
+END_IF;
+
+// Цепь 2
+IF "Level_1" THEN
+	"RawFlow" := TRUE;
+	"OnOven" := FALSE;
+ELSE
+	"OnOven" := TRUE;
+	"RawFlow" := FALSE;
+END_IF;
+
+// Цепь 3
+IF "Temperature_1" THEN
+	"OnOven" := TRUE;
+	"FlowK_1_3" := FALSE;
+ELSE
+	"FlowK_1_3" := TRUE;
+	"OnOven" := FALSE;
+END_IF;
+
+// Цепь 4
+IF "Pressure_1" THEN
+	"FlowK_1_3" := TRUE;
+	"OnAdsorber" := FALSE;
+ELSE
+	"OnAdsorber" := TRUE;
+	"Flow_1_3" := FALSE;
+END_IF;
+
+// Цепь 5
+Timer_1 := S_PULSE (
+	T_NO := %T1.0,
+	TV := T#5S);
+
+IF "Timer_1" THEN
+	"OnAdsorber" := TRUE;
+	"FlowFridge_1" := FALSE;
+ELSE
+	"FlowFridge_1" := TRUE;
+	"OnAdsorber" := FALSE;
+END_IF;
+
+// Цепь 6  
+IF "Pressure_2" THEN
+	"FlowFridge_1" := TRUE;
+	"OnFridge_1" := FALSE;
+ELSE
+	"OnFridge_2" := TRUE;
+	"FlowK_2" := FALSE;
+END_IF;
+
+// Цепь 7
+IF "Temperature_2" THEN
+	"FlowK_2" := TRUE;
+	"OnK_2" := FALSE;
+ELSE
+	"OnK_2" := TRUE;
+	"FlowK_2" := FALSE;
+END_IF;
+
+// Цепь 8
+IF "Level_2" THEN
+	"OnK_2" := TRUE;
+	"FlowK_3" := FALSE;
+ELSE
+	"FlowK_3" := TRUE;
+	"OnK_2" := FALSE;
+END_IF;
+
+// Цепь 9
+IF "Temperature_3" THEN
+	"FlowK_3" := TRUE;
+	"OnStabilizer" := FALSE;
+ELSE
+	"OnStabilizer" := TRUE;
+	"FlowK_3" := FALSE;
+END_IF;
+
+// Цепь 10
+IF "Pressure_3" THEN
+	"OnStabilizer" := TRUE;
+	"FlowWarm" := FALSE;
+ELSE
+	"FlowWarm" := TRUE;
+	"OnStabilizer" := FALSE;
+END_IF;
+
+// Цепь 11
+Timer_2 := S_PULSE(
+	T_NO := %T0.1,
+	TV := T#10S);
+
+IF "Timer_2" THEN
+	"FlowWarm" := TRUE;
+	"OnWarm" := FALSE;
+ELSE
+	"OnWarm" := TRUE;
+	"FlowWarm" := FALSE;
+END_IF;
+
+// Цепь 12
+IF "Pressure_4" THEN
+	"OnWarm" := TRUE;
+	"OnStabilizer" := FALSE;
+ELSE
+	"OnStabilizer" := TRUE;
+	"OnWarm" := FALSE;
+END_IF;
+
+// Цепь 13
+Timer_2 := S_PULSE(
+	T_NO := %T0.2,
+	TV := T#10S); 
+
+IF "Timer_2" THEN
+	"OnStabilizer" := TRUE;
+	"FlowWarm" := FALSE;
+ELSE
+	"FlowWarm" := TRUE;
+	"OnStabilizer" := FALSE;
+END_IF;
+
+// Цепь 14
+IF "Level_3" THEN
+	"OnWarm" := TRUE;
+	"FlowFridge_2" := FALSE;
+ELSE
+	"FlowFridge_2" := TRUE;
+	"OnWarm" := FALSE;
+END_IF;
+
+// Цепь 15
+Timer_3 := S_PULSE(
+	T_NO := %T0.2,
+	TV := T#10S); 
+
+IF "Timer_3" THEN
+	"FlowFridge_2" := TRUE;
+	"OnFridge_2" := FALSE;
+ELSE
+	"OnFridge_2" := TRUE;
+	"FlowFridge_2" := FALSE;
+END_IF;
+
+// Цепь 16
+IF "Pressure_5" THEN
+	"OnFridge_2" := TRUE;
+	"FlowE_1" := FALSE;
+ELSE
+	"FlowE_1" := TRUE;
+	"OnFridge_2" := FALSE;
+END_IF;
+
+// Цепь 17
+Timer_5 := S_PULSE(
+	T_NO := %T0.2,
+	TV := T#10S);
+
+IF "Timer_5" THEN
+	"FlowE_1" := TRUE;
+	"OnCompressor" := FALSE;
+	"OnPurge" := FALSE;
+ELSE
+	"OnCompressor" := TRUE;
+	"OnPurge" := TRUE;
+	"FlowE_1" := FALSE;
+END_IF;
+
+// Цепь 18
+IF "Pressure_6" THEN
+	"OnCompressor" := TRUE;
+	"OnPurge" := TRUE;
+	"FlowFridge" := FALSE;
+ELSE
+	"FlowFridge" := TRUE;
+	"OnPurge" := FALSE;
+	"OnCompressor" := FALSE;
+END_IF;
+
+// Цепь 19
+IF "Temperature_4" THEN
+	"FlowFridge" := TRUE;
+	"OnFridge" := FALSE;
+ELSE
+	"OnFridge" := TRUE;
+	"FlowFridge" := FALSE;
+END_IF;
+
+// Цепь 20
+IF "Pressure_7" THEN
+	"OnFridge" := TRUE;
+	"FlowE_2" := FALSE;
+ELSE
+	"FlowE_2" := TRUE;
+	"OnFridge" := FALSE;
+END_IF;
+
+// Цепь 21
+IF "Pressure_8" THEN
+	"FlowE_2" := TRUE;
+	"OnSeparator" := FALSE;
+ELSE
+	"OnSeparator" := TRUE;
+	"FlowE_2" := FALSE;
+END_IF;
+
+// Цепь 22
+IF "Timer_6" THEN
+	"OnSeparator" := TRUE;
+	"FlowOffset" := FALSE;
+ELSE
+	"FlowOffset" := TRUE;
+	"OnSeparator" := FALSE;
+END_IF;
+
+
